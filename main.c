@@ -416,6 +416,8 @@ void run_opencl(cl_context ctx, cl_command_queue queue, cl_kernel* tests)
     // Clean up
     if (dbg)
         free(dbg);
+    getchar();
+    printf("Release\n");
     clReleaseMemObject(buf_dbg);
     clReleaseMemObject(buf_test);
 }
@@ -644,5 +646,6 @@ int main(int argc, char **argv)
                 break ;
         }
     run_bench();
+    getchar();
     return 0;
 }
